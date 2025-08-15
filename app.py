@@ -72,9 +72,10 @@ def contact():
         db.session.commit()
 
         # Email configuration
-        sender_email = "fightermankunal3@gmail.com"  # Replace with your email
-        receiver_email = "www.ak4554@gmail.com"  # Replace with your email
-        password = "vibc tfhc hqyz ekqv"  # Replace with your app password
+        # Email configuration
+        sender_email = os.environ.get('SENDER_EMAIL')
+        receiver_email = os.environ.get('RECEIVER_EMAIL')
+        password = os.environ.get('APP_PASSWORD')
 
         subject = "New Contact Form Submission"
         body = f"Name: {name}\nEmail: {email}\nMobile: {mobile}\nMessage: {message}"

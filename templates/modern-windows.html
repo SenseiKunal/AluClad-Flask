@@ -1,9 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AluClad - Modern Windows</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -30,20 +29,10 @@
         }
         .navbar {
             transition: all 0.3s ease;
-            z-index: 50;
         }
         .navbar.scrolled {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9));
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .navbar-mobile {
-            display: none;
-        }
-        .navbar-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: #2563eb;
-            cursor: pointer;
         }
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -71,6 +60,7 @@
         a:hover {
             color: #1e40af;
         }
+        /* Lightbox styles */
         .lightbox {
             display: none;
             position: fixed;
@@ -120,190 +110,240 @@
             color: white;
             cursor: pointer;
         }
-        @media (max-width: 640px) {
-            .navbar-toggle {
-                display: block;
-            }
-            .navbar-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 1rem;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .navbar-menu.active {
-                display: block;
-            }
-            .navbar-desktop {
-                display: none;
-            }
-            .window-grid {
-                grid-template-columns: 1fr;
-            }
-            .card img {
-                height: 24rem; /* Adjusted for mobile */
-            }
-            .card .p-4 {
-                padding: 1rem;
-            }
-            .lightbox img {
-                max-width: 95%;
-                max-height: 70%;
-            }
-            .lightbox-nav {
-                font-size: 1.5rem;
-            }
-            .lightbox-close, .lightbox-fullscreen {
-                top: 10px;
-            }
-            .lightbox-close {
-                right: 10px;
-            }
-            .lightbox-fullscreen {
-                right: 40px;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-2xl md:text-3xl font-bold text-blue-600">AluClad</h1>
-            <div class="navbar-desktop md:flex space-x-6 hidden">
+            <h1 class="text-3xl font-bold text-blue-600">AluClad</h1>
+            <div class="space-x-6">
                 <a href="/#home" class="hover:text-blue-600 font-medium transition">Home</a>
                 <a href="/#about" class="hover:text-blue-600 font-medium transition">About Us</a>
                 <a href="/#products" class="hover:text-blue-600 font-medium transition">Products</a>
                 <a href="/#why-us" class="hover:text-blue-600 font-medium transition">Why Us</a>
                 <a href="/#contact" class="hover:text-blue-600 font-medium transition">Contact</a>
             </div>
-            <div class="md:hidden flex items-center">
-                <i class="fas fa-bars navbar-toggle" id="navbar-toggle"></i>
-            </div>
-            <div id="navbar-menu" class="navbar-menu">
-                <a href="/#home" class="block py-2 hover:text-blue-600 font-medium transition">Home</a>
-                <a href="/#about" class="block py-2 hover:text-blue-600 font-medium transition">About Us</a>
-                <a href="/#products" class="block py-2 hover:text-blue-600 font-medium transition">Products</a>
-                <a href="/#why-us" class="block py-2 hover:text-blue-600 font-medium transition">Why Us</a>
-                <a href="/#contact" class="block py-2 hover:text-blue-600 font-medium transition">Contact</a>
-            </div>
         </div>
     </nav>
 
     <!-- Modern Windows Section -->
-    <section id="modern-windows" class="py-16 md:py-20 section-animate">
+    <section id="modern-windows" class="py-20 section-animate">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-blue-600">Modern Windows Collection</h2>
-            <p class="text-base md:text-lg max-w-3xl mx-auto text-center mb-6 md:mb-12 text-gray-600">
-                Explore our curated selection of 15 modern aluminum windows, designed for style, durability, and energy efficiency.
+            <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">Modern Windows Collection</h2>
+            <p class="text-lg max-w-3xl mx-auto text-center mb-12 text-blue-500">
+                Explore our curated selection of 30 modern aluminum windows, designed for style, durability, and energy efficiency.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 window-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Window Items -->
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Casement Window Classic">
-                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Classic" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Classic" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Casement Window Classic</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $350–$950</p>
+                        <h4 class="font-semibold text-lg">Casement Window Classic</h4>
+                        <p class="text-gray-600">Price: $350–$950</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Sliding Window Minimal">
-                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Minimal" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Minimal" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Sliding Window Minimal</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $300–$1,000</p>
+                        <h4 class="font-semibold text-lg">Sliding Window Minimal</h4>
+                        <p class="text-gray-600">Price: $300–$1,000</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Picture Window Panoramic">
-                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Panoramic" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Panoramic" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Picture Window Panoramic</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $600–$2,500</p>
+                        <h4 class="font-semibold text-lg">Picture Window Panoramic</h4>
+                        <p class="text-gray-600">Price: $600–$2,500</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Awning Window Modern">
-                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Modern" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Modern" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Awning Window Modern</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $250–$1,200</p>
+                        <h4 class="font-semibold text-lg">Awning Window Modern</h4>
+                        <p class="text-gray-600">Price: $250–$1,200</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Double-Hung Window Sleek">
-                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Sleek" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Sleek" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Double-Hung Window Sleek</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $300–$900</p>
+                        <h4 class="font-semibold text-lg">Double-Hung Window Sleek</h4>
+                        <p class="text-gray-600">Price: $300–$900</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Single-Hung Window Standard">
-                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Standard" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Standard" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Single-Hung Window Standard</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $200–$600</p>
+                        <h4 class="font-semibold text-lg">Single-Hung Window Standard</h4>
+                        <p class="text-gray-600">Price: $200–$600</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Casement Window Slim">
-                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Slim" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Slim" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Casement Window Slim</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $400–$1,200</p>
+                        <h4 class="font-semibold text-lg">Casement Window Slim</h4>
+                        <p class="text-gray-600">Price: $400–$1,200</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Sliding Window Wide">
-                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Wide" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Wide" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Sliding Window Wide</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $350–$1,100</p>
+                        <h4 class="font-semibold text-lg">Sliding Window Wide</h4>
+                        <p class="text-gray-600">Price: $350–$1,100</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Picture Window Large">
-                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Large" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Large" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Picture Window Large</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $700–$3,000</p>
+                        <h4 class="font-semibold text-lg">Picture Window Large</h4>
+                        <p class="text-gray-600">Price: $700–$3,000</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Awning Window Compact">
-                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Compact" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Compact" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Awning Window Compact</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $300–$1,000</p>
+                        <h4 class="font-semibold text-lg">Awning Window Compact</h4>
+                        <p class="text-gray-600">Price: $300–$1,000</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Double-Hung Window Modern">
-                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Modern" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Modern" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Double-Hung Window Modern</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $350–$950</p>
+                        <h4 class="font-semibold text-lg">Double-Hung Window Modern</h4>
+                        <p class="text-gray-600">Price: $350–$950</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Single-Hung Window Slim">
-                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Slim" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Slim" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Single-Hung Window Slim</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $250–$650</p>
+                        <h4 class="font-semibold text-lg">Single-Hung Window Slim</h4>
+                        <p class="text-gray-600">Price: $250–$650</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Casement Window Large">
-                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Large" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Large" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Casement Window Large</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $450–$1,500</p>
+                        <h4 class="font-semibold text-lg">Casement Window Large</h4>
+                        <p class="text-gray-600">Price: $450–$1,500</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Sliding Window Panoramic">
-                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Panoramic" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Panoramic" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Sliding Window Panoramic</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $400–$1,200</p>
+                        <h4 class="font-semibold text-lg">Sliding Window Panoramic</h4>
+                        <p class="text-gray-600">Price: $400–$1,200</p>
                     </div>
                 </div>
                 <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Picture Window Slim">
-                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Slim" loading="lazy" class="w-full h-48 md:h-64 object-cover">
+                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Slim" loading="lazy" class="w-full h-48 object-cover">
                     <div class="p-4">
-                        <h4 class="font-semibold text-lg md:text-xl">Picture Window Slim</h4>
-                        <p class="text-gray-600 text-sm md:text-base">Price: $500–$2,000</p>
+                        <h4 class="font-semibold text-lg">Picture Window Slim</h4>
+                        <p class="text-gray-600">Price: $500–$2,000</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Awning Window Wide">
+                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Wide" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Awning Window Wide</h4>
+                        <p class="text-gray-600">Price: $350–$1,300</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Double-Hung Window Large">
+                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Large" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Double-Hung Window Large</h4>
+                        <p class="text-gray-600">Price: $400–$1,000</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Single-Hung Window Wide">
+                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Wide" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Single-Hung Window Wide</h4>
+                        <p class="text-gray-600">Price: $300–$700</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Casement Window Panoramic">
+                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Panoramic" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Casement Window Panoramic</h4>
+                        <p class="text-gray-600">Price: $500–$1,600</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Sliding Window Slim">
+                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Slim" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Sliding Window Slim</h4>
+                        <p class="text-gray-600">Price: $320–$1,050</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Picture Window Wide">
+                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Wide" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Picture Window Wide</h4>
+                        <p class="text-gray-600">Price: $650–$2,800</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Awning Window Slim">
+                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Slim" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Awning Window Slim</h4>
+                        <p class="text-gray-600">Price: $280–$1,100</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Double-Hung Window Compact">
+                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Compact" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Double-Hung Window Compact</h4>
+                        <p class="text-gray-600">Price: $320–$900</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Single-Hung Window Modern">
+                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Modern" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Single-Hung Window Modern</h4>
+                        <p class="text-gray-600">Price: $220–$620</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Casement Window Wide">
+                    <img src="/static/images/modern-window21.jpg" alt="Casement Window Wide" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Casement Window Wide</h4>
+                        <p class="text-gray-600">Price: $420–$1,300</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Sliding Window Large">
+                    <img src="/static/images/modern-window21.jpg" alt="Sliding Window Large" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Sliding Window Large</h4>
+                        <p class="text-gray-600">Price: $380–$1,150</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Picture Window Modern">
+                    <img src="/static/images/modern-window21.jpg" alt="Picture Window Modern" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Picture Window Modern</h4>
+                        <p class="text-gray-600">Price: $600–$2,700</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Awning Window Large">
+                    <img src="/static/images/modern-window21.jpg" alt="Awning Window Large" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Awning Window Large</h4>
+                        <p class="text-gray-600">Price: $350–$1,250</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Double-Hung Window Wide">
+                    <img src="/static/images/modern-window21.jpg" alt="Double-Hung Window Wide" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Double-Hung Window Wide</h4>
+                        <p class="text-gray-600">Price: $370–$950</p>
+                    </div>
+                </div>
+                <div class="card bg-white rounded-2xl shadow-lg overflow-hidden" data-image="/static/images/modern-window21.jpg" data-title="Single-Hung Window Large">
+                    <img src="/static/images/modern-window21.jpg" alt="Single-Hung Window Large" loading="lazy" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg">Single-Hung Window Large</h4>
+                        <p class="text-gray-600">Price: $270–$680</p>
                     </div>
                 </div>
             </div>
@@ -343,6 +383,21 @@
     </footer>
 
     <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else {
+                    window.location.href = '/';
+                }
+            });
+        });
+
         // Sticky Navbar
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -375,11 +430,13 @@
         const cards = document.querySelectorAll('.card');
         let currentIndex = 0;
 
+        // Store image data
         const images = Array.from(cards).map(card => ({
             src: card.dataset.image,
             title: card.dataset.title
         }));
 
+        // Open lightbox
         cards.forEach((card, index) => {
             card.addEventListener('click', () => {
                 currentIndex = index;
@@ -389,6 +446,7 @@
             });
         });
 
+        // Close lightbox
         lightboxClose.addEventListener('click', () => {
             lightbox.style.display = 'none';
             if (document.fullscreenElement) {
@@ -396,18 +454,21 @@
             }
         });
 
+        // Navigate to previous image
         lightboxPrev.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             lightboxImage.src = images[currentIndex].src;
             lightboxTitle.textContent = images[currentIndex].title;
         });
 
+        // Navigate to next image
         lightboxNext.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % images.length;
             lightboxImage.src = images[currentIndex].src;
             lightboxTitle.textContent = images[currentIndex].title;
         });
 
+        // Close lightbox on click outside image
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
@@ -417,6 +478,7 @@
             }
         });
 
+        // Toggle fullscreen
         lightboxFullscreen.addEventListener('click', () => {
             if (!document.fullscreenElement) {
                 lightbox.requestFullscreen().catch(err => {
@@ -427,6 +489,7 @@
             }
         });
 
+        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (lightbox.style.display === 'flex') {
                 if (e.key === 'ArrowLeft') {
@@ -453,14 +516,6 @@
                 }
             }
         });
-
-        // Navbar Toggle for Mobile
-        const navbarToggle = document.getElementById('navbar-toggle');
-        const navbarMenu = document.getElementById('navbar-menu');
-        navbarToggle.addEventListener('click', () => {
-            navbarMenu.classList.toggle('active');
-        });
     </script>
 </body>
 </html>
-```

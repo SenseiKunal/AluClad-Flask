@@ -39,23 +39,23 @@ def modern_windows():
 
 @app.route('/office-door')
 def office_door():
-    return render_template('modern-windows.html')
+    return render_template('Office Door.html')
 
 @app.route('/hospital-window')
 def hospital_window():
-    return render_template('modern-windows.html')
+    return render_template('Hospital Window.html')
 
 @app.route('/commercial-window')
 def commercial_window():
-    return render_template('modern-windows.html')
+    return render_template('Commercial Window.html')
 
 @app.route('/retail-door')
 def retail_door():
-    return render_template('modern-windows.html')
+    return render_template('Retail Door.html')
 
 @app.route('/industrial-window')
 def industrial_window():
-    return render_template('modern-windows.html')
+    return render_template('Industrial Window.html')
 
 # Contact Form Submission
 @app.route('/contact', methods=['POST'])
@@ -72,10 +72,9 @@ def contact():
         db.session.commit()
 
         # Email configuration
-        # Email configuration
-        sender_email = os.environ.get('SENDER_EMAIL')
-        receiver_email = os.environ.get('RECEIVER_EMAIL')
-        password = os.environ.get('APP_PASSWORD')
+        sender_email = "fightermankunal3@gmail.com"  # Replace with your email
+        receiver_email = "www.ak4554@gmail.com"  # Replace with your email
+        password = "vibc tfhc hqyz ekqv"  # Replace with your app password
 
         subject = "New Contact Form Submission"
         body = f"Name: {name}\nEmail: {email}\nMobile: {mobile}\nMessage: {message}"

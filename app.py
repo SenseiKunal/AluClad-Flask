@@ -41,9 +41,9 @@ def modern_windows():
 def office_door():
     return render_template('Office Door.html')
 
-@app.route('/hospital-window')
-def hospital_window():
-    return render_template('Hospital Window.html')
+@app.route('/ACP work')
+def ACP_work():
+    return render_template('ACP work.html')
 
 @app.route('/commercial-window')
 def commercial_window():

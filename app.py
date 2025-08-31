@@ -45,17 +45,17 @@ def office_door():
 def ACP_work():
     return render_template('ACP work.html')
 
-@app.route('/commercial-window')
-def commercial_window():
-    return render_template('Commercial Window.html')
+@app.route('/Partition')
+def Partition():
+    return render_template('Partition.html')
 
-@app.route('/retail-door')
-def retail_door():
-    return render_template('Retail Door.html')
+@app.route('/louvers Design')
+def louvers_Design():
+    return render_template('louvers Design.html')
 
-@app.route('/industrial-window')
-def industrial_window():
-    return render_template('Industrial Window.html')
+@app.route('/Past Working')
+def Past_Working():
+    return render_template('Past Working.html')
 
 # Contact Form Submission
 @app.route('/contact', methods=['POST'])
